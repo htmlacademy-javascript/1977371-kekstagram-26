@@ -1,10 +1,24 @@
-// eslint-disable-next-line no-unused-vars
 function getRandomIntInc(min, max) {
-  if (min >= 0 && min < max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
+  if (min < 0 || max < 0) {
+    console.log('Условие не верно');
+    return;
   }
-  else if (min < 0 && min > max) { console.log('Условие не верно')}
+
+  const firstNumber = Math.ceil(min);
+  const secondNumber = Math.floor(max);
+
+  if (secondNumber < firstNumber) {
+    return (
+      Math.floor(Math.random() * (firstNumber - secondNumber + 1)) +
+      secondNumber
+    );
+  }
+
+  if (secondNumber === firstNumber) {
+    return firstNumber;
+  }
+
+  return (
+    Math.floor(Math.random() * (secondNumber - firstNumber + 1)) + firstNumber
+  );
 }
-// console.log(getRandomInc(1, 10));
