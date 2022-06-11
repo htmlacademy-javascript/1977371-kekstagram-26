@@ -1,24 +1,19 @@
-function getRandomIntInc(min, max) {
-  if (min < 0 || max < 0) {
-    console.log('Условие не верно');
-    return;
+var str = prompt("Введите строку ", "");
+var maxlegth = +prompt("Введите максимальную длину ", "")
+function truncate() {
+  if (str = maxlegth || str < maxlegth) {
+    console.log('true');
   }
-
-  const firstNumber = Math.ceil(min);
-  const secondNumber = Math.floor(max);
-
-  if (secondNumber < firstNumber) {
-    return (
-      Math.floor(Math.random() * (firstNumber - secondNumber + 1)) +
-      secondNumber
-    );
+  else {
+    console.log('false');
   }
+}
 
-  if (secondNumber === firstNumber) {
-    return firstNumber;
+function truncate(str, maxleght) {
+  if (str.length <= maxlegth) {
+    return true;
   }
-
-  return (
-    Math.floor(Math.random() * (secondNumber - firstNumber + 1)) + firstNumber
-  );
+  else {
+    return false;
+  }
 }
