@@ -9,8 +9,6 @@ function truncate() {
   }
 }
 
-// функция для нахождения наибольшего количество символов в строке
-
 function truncate(str, maxleght) {
   if (str.length <= maxlegth) {
     return true;
