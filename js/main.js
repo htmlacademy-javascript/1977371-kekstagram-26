@@ -1,6 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 function getRandomIntInc(min, max) {
   if (min < 0 || max < 0) {
-    console.log('Условие не верно');
     return;
   }
 
@@ -23,8 +23,10 @@ function getRandomIntInc(min, max) {
   );
 }
 
+// вторая функция
+// eslint-disable-next-line no-unused-vars
 function truncate(str, maxleght) {
-  if (str.length <= maxlegth) {
+  if (str.length <= maxleght) {
     return true;
   }
   else {
