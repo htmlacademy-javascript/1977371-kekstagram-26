@@ -1,21 +1,98 @@
 // id, число — идентификатор описания. Это число от 1 до 25. Идентификаторы не должны повторяться.
 // eslint-disable-next-line no-unused-vars
-const id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+const Id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
 
 // url, строка — адрес картинки вида photos/{{i}}.jpg, где {{i}} — это число от 1 до 25. Адреса картинок не должны повторяться.
 // eslint-disable-next-line no-unused-vars
-const url = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+const Url = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
 
 
 // description, строка — описание фотографии. Описание придумайте самостоятельно.
 // eslint-disable-next-line no-unused-vars
-const description = [
+const Description = [
   'Солнечный день',
   'Хорошее настроение',
   'Счастливая улыбка',
+  'Счастливые будни веселого человека',
+  'Радость и только',
 ];
 
 // likes, число — количество лайков, поставленных фотографии. Случайное число от 15 до 200.
 // eslint-disable-next-line no-unused-vars
-const likes = [15, 16];
+const Likes = [15, 200];
+// eslint-disable-next-line no-unused-vars
+function getRandomIntInc(min, max) {
+  if (min < 0 || max < 0) {
+    return;
+  }
 
+  const firstNumber = Math.ceil(min);
+  const secondNumber = Math.floor(max);
+
+  if (secondNumber < firstNumber) {
+    return (
+      Math.floor(Math.random() * (firstNumber - secondNumber + 1)) +
+      secondNumber
+    );
+  }
+
+  if (secondNumber === firstNumber) {
+    return firstNumber;
+  }
+
+  return (
+    Math.floor(Math.random() * (secondNumber - firstNumber + 1)) + firstNumber
+  );
+}
+
+// comments, массив объектов — список комментариев, оставленных другими пользователями к этой фотографии. Количество комментариев к каждой фотографии вы определяете на своё усмотрение. Все комментарии генерируются случайным образом. Пример описания объекта с комментарием:
+// eslint-disable-next-line no-unused-vars
+const Comments = [0, 5];
+
+
+// Для формирования текста комментария — message — вам необходимо взять одно или два случайных предложения из представленных ниже:
+// eslint-disable-next-line no-unused-vars
+const Message = [
+  'Всё отлично!',
+  'В целом всё неплохо. Но не всё.',
+  'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
+  'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
+  'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
+  'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
+];
+
+// eslint-disable-next-line no-unused-vars
+// имена авторов комментариев
+// eslint-disable-next-line no-unused-vars
+const Names = [
+  'Иван',
+  'Константин',
+  'Мария',
+  'Кристоф',
+  'Виктор',
+  'Юлия',
+  'Лолита',
+  'Бергамонт',
+];
+
+const getRandomPositiveInteger = (a, b) => {
+  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
+  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
+  const result = Math.random() * (upper - lower + 1) + lower;
+  return Math.floor(result);
+};
+
+
+// eslint-disable-next-line no-unused-vars
+const rondomFoto = () => {
+  const randomIdIndex = getRandomPositiveInteger(1, 25);
+  const randomNamesIndex = getRandomPositiveInteger(0, Names.length - 1);
+  const randomMessageIndex = getRandomPositiveInteger(0, Message.length - 1);
+
+  return {
+    id: Id[randomIdIndex],
+    avatar: ' ',
+    message: Message[randomMessageIndex],
+    name: Names[randomNamesIndex],
+  };
+};
