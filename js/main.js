@@ -2,10 +2,43 @@
 // eslint-disable-next-line no-unused-vars
 const Id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
 
+// eslint-disable-next-line camelcase
+const random_start_id = 1; // От какого числа генерировать
+// eslint-disable-next-line camelcase
+const random_end_id = 25; // До какого числа генерировать
+// eslint-disable-next-line no-undef
+allСycles = 25;
+const array = [];
+// eslint-disable-next-line camelcase
+for (i = random_start_id; i <= random_end_id; i++) {
+  array.push(i);
+}
+// eslint-disable-next-line no-undef
+for (countCycles = 1; countCycles <= allСycles; countCycles++) {
+  // eslint-disable-next-line no-console
+  console.log(array.splice(Math.random() * array.length, 1)[0]);
+}
+
+
 // url, строка — адрес картинки вида photos/{{i}}.jpg, где {{i}} — это число от 1 до 25. Адреса картинок не должны повторяться.
 // eslint-disable-next-line no-unused-vars
 const Url = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
-
+// eslint-disable-next-line camelcase
+const random_start_url = 1; // От какого генерировать
+// eslint-disable-next-line camelcase
+const random_end_url = 25; // До какого генерировать
+// eslint-disable-next-line no-undef
+allСycles = 25;
+const array = [];
+// eslint-disable-next-line camelcase
+for (i = random_start_url; i <= random_end_url; i++) {
+  array.push(i);
+}
+// eslint-disable-next-line no-undef
+for (countCycles = 1; countCycles <= allСycles; countCycles++) {
+  // eslint-disable-next-line no-console
+  console.log(array.splice(Math.random() * array.length, 1)[0]);
+}
 
 // description, строка — описание фотографии. Описание придумайте самостоятельно.
 // eslint-disable-next-line no-unused-vars
@@ -21,28 +54,10 @@ const Description = [
 // eslint-disable-next-line no-unused-vars
 const Likes = [15, 200];
 // eslint-disable-next-line no-unused-vars
-function getRandomIntInc(min, max) {
-  if (min < 0 || max < 0) {
-    return;
-  }
-
-  const firstNumber = Math.ceil(min);
-  const secondNumber = Math.floor(max);
-
-  if (secondNumber < firstNumber) {
-    return (
-      Math.floor(Math.random() * (firstNumber - secondNumber + 1)) +
-      secondNumber
-    );
-  }
-
-  if (secondNumber === firstNumber) {
-    return firstNumber;
-  }
-
-  return (
-    Math.floor(Math.random() * (secondNumber - firstNumber + 1)) + firstNumber
-  );
+function getRandomIntInclusive(15, 200) {
+  min = Math.ceil(15);
+  max = Math.floor(200);
+  return Math.floor(Math.random() * (200 - 15 + 1)) + 15;
 }
 
 // comments, массив объектов — список комментариев, оставленных другими пользователями к этой фотографии. Количество комментариев к каждой фотографии вы определяете на своё усмотрение. Все комментарии генерируются случайным образом. Пример описания объекта с комментарием:
@@ -84,8 +99,8 @@ const getRandomPositiveInteger = (a, b) => {
 
 
 // eslint-disable-next-line no-unused-vars
-const rondomFoto = () => {
-  const randomIdIndex = getRandomPositiveInteger(1, 25);
+const randomFoto = () => {
+  const randomIdIndex = ;
   const randomNamesIndex = getRandomPositiveInteger(0, Names.length - 1);
   const randomMessageIndex = getRandomPositiveInteger(0, Message.length - 1);
 
@@ -96,3 +111,7 @@ const rondomFoto = () => {
     name: Names[randomNamesIndex],
   };
 };
+
+console.log(
+  randomFoto()
+);
