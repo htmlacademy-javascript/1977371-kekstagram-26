@@ -42,7 +42,7 @@ for (countCycles = 1; countCycles <= allСycles; countCycles++) {
 
 // description, строка — описание фотографии. Описание придумайте самостоятельно.
 // eslint-disable-next-line no-unused-vars
-const Description = [
+const description = [
   'Солнечный день',
   'Хорошее настроение',
   'Счастливая улыбка',
@@ -52,18 +52,24 @@ const Description = [
 
 // likes, число — количество лайков, поставленных фотографии. Случайное число от 15 до 200.
 // eslint-disable-next-line no-unused-vars
-const Likes = [15, 200];
-// eslint-disable-next-line no-unused-vars
+
 function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
+  min = Math.ceil(15);
+  max = Math.floor(200);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
+let likes = getRandomIntInclusive;
+likes();
 // comments, массив объектов — список комментариев, оставленных другими пользователями к этой фотографии. Количество комментариев к каждой фотографии вы определяете на своё усмотрение. Все комментарии генерируются случайным образом. Пример описания объекта с комментарием:
 // eslint-disable-next-line no-unused-vars
 const Comments = [0, 5];
-
+function getRandomComments(min, max) {
+  min = Math.ceil(1);
+  max = Math.floor(2);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+let likes = getRandomIntInclusive;
+likes()
 
 // Для формирования текста комментария — message — вам необходимо взять одно или два случайных предложения из представленных ниже:
 // eslint-disable-next-line no-unused-vars
@@ -99,7 +105,7 @@ const getRandomPositiveInteger = (a, b) => {
 
 
 // eslint-disable-next-line no-unused-vars
-const randomFoto = () => {
+const randomFotoDescription = () => {
   const randomIdIndex = ;
   const randomNamesIndex = getRandomPositiveInteger(0, Names.length - 1);
   const randomMessageIndex = getRandomPositiveInteger(0, Message.length - 1);
@@ -113,5 +119,18 @@ const randomFoto = () => {
 };
 
 console.log(
-  randomFoto()
+  randomFotoDescription()
 );
+
+
+const randomFoto = () => {
+  const randomUrlIndex = ;
+  const description = ;
+  const likes = likes();
+
+  return {
+    url: ' ',
+    likes: ' ',
+    description: ' ',
+  };
+};
