@@ -54,10 +54,10 @@ const Description = [
 // eslint-disable-next-line no-unused-vars
 const Likes = [15, 200];
 // eslint-disable-next-line no-unused-vars
-function getRandomIntInclusive(15, 200) {
-  min = Math.ceil(15);
-  max = Math.floor(200);
-  return Math.floor(Math.random() * (200 - 15 + 1)) + 15;
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // comments, массив объектов — список комментариев, оставленных другими пользователями к этой фотографии. Количество комментариев к каждой фотографии вы определяете на своё усмотрение. Все комментарии генерируются случайным образом. Пример описания объекта с комментарием:
