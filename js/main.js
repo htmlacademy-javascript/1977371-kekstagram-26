@@ -1,20 +1,18 @@
 // id, число — идентификатор описания. Это число от 1 до 25. Идентификаторы не должны повторяться.
 // eslint-disable-next-line no-unused-vars
-const Id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
-
 // eslint-disable-next-line camelcase
-const random_start_id = 1; // От какого числа генерировать
+const randomStartId = 1; // От какого числа генерировать
 // eslint-disable-next-line camelcase
-const random_end_id = 25; // До какого числа генерировать
+const randomEndId = 25; // До какого числа генерировать
 // eslint-disable-next-line no-undef
-allСycles = 25;
+let allСyclesId = 25;
 const array = [];
 // eslint-disable-next-line camelcase
-for (i = random_start_id; i <= random_end_id; i++) {
+for (i = randomStartId; i <= randomEndId; i++) {
   array.push(i);
 }
 // eslint-disable-next-line no-undef
-for (countCycles = 1; countCycles <= allСycles; countCycles++) {
+for (countCycles = 1; countCycles <= allСyclesId; countCycles++) {
   // eslint-disable-next-line no-console
   console.log(array.splice(Math.random() * array.length, 1)[0]);
 }
@@ -22,20 +20,19 @@ for (countCycles = 1; countCycles <= allСycles; countCycles++) {
 
 // url, строка — адрес картинки вида photos/{{i}}.jpg, где {{i}} — это число от 1 до 25. Адреса картинок не должны повторяться.
 // eslint-disable-next-line no-unused-vars
-const Url = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
 // eslint-disable-next-line camelcase
-const random_start_url = 1; // От какого генерировать
+const randomStartUrl = 1; // От какого генерировать
 // eslint-disable-next-line camelcase
-const random_end_url = 25; // До какого генерировать
+const randomEndUrl = 25; // До какого генерировать
 // eslint-disable-next-line no-undef
-allСycles = 25;
+let allСyclesUrl = 25;
 const array = [];
 // eslint-disable-next-line camelcase
-for (i = random_start_url; i <= random_end_url; i++) {
+for (i = randomStartUrl; i <= randomEndUrl; i++) {
   array.push(i);
 }
 // eslint-disable-next-line no-undef
-for (countCycles = 1; countCycles <= allСycles; countCycles++) {
+for (countCycles = 1; countCycles <= allСyclesUrl; countCycles++) {
   // eslint-disable-next-line no-console
   console.log(array.splice(Math.random() * array.length, 1)[0]);
 }
@@ -62,7 +59,6 @@ let likes = getRandomIntInclusive;
 likes();
 // comments, массив объектов — список комментариев, оставленных другими пользователями к этой фотографии. Количество комментариев к каждой фотографии вы определяете на своё усмотрение. Все комментарии генерируются случайным образом. Пример описания объекта с комментарием:
 // eslint-disable-next-line no-unused-vars
-const Comments = [0, 5];
 function getRandomComments(min, max) {
   min = Math.ceil(1);
   max = Math.floor(2);
