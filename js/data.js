@@ -93,6 +93,6 @@ const randomFoto = () => {
   };
 };
 
-const createFotos = () => Array.from({length:25}, randomFoto);
+const createFotos = (count) => Array.from({length: count}, randomFoto);
 
 export {createFotos};
